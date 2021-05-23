@@ -10,4 +10,15 @@ def item(*val):
 item('good','hi','bye','hfhfh','asdfhiasgh')
 item(12,23,53,23.5)
 
+num1 = input('Enter a number to add')
+num2 = input('Enter another number to add')
+
+
+def add(a,b):
+    c = a + b
+    return c
+
+add(num1,num2)
+
+
      
