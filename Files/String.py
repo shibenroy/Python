@@ -18,7 +18,9 @@ if myask == '1':
 elif myask == '2':
     print(len(spl))
 elif myask == '3':
-    print(spl)
+    for x in spl:
+        print(x)
+    
 
 else:
     print("incorrect input")
