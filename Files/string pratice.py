@@ -31,6 +31,7 @@ elif myask == '5':
 else:
     print("incorrect input")
 
+input1 = input('Do You Want To Do Again?')
 
-
-
+if input1 == 'yes':
+    print(mystr)
