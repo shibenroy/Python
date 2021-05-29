@@ -6,4 +6,6 @@ mystr = input('Please input String :')
 #         print('*')
 #     else:
 #         print(i)
-    
+
+s = mystr.capitalize()
+print(s)

@@ -1,10 +1,17 @@
 mystr = input('Please input Sentence :')
 
-# for i in mystr:
-#     if i==' ':
-#         print('*')
-#     else:
-#         print(i)
+spl2 = mystr.split()
+def point6():
+    # global mystr
+    if spl2==' ':
+        print('*')
+        # ret = ret + "*"
+
+    else:
+        print(mystr)
+
+    
+    # print("kk") 
     
 print("What Do You Want?")
 print(' 1.Lenght')
@@ -25,13 +32,24 @@ elif myask == '3':
 elif myask == '4':
     print(mystr.lower())
 elif myask == '5':
-    print(mystr.upper())            
+    print(mystr.upper())
+elif myask == '6':
+        point6()
+
+
+
+
+
+
+         
+          
     
 
 else:
     print("incorrect input")
 
+print(spl2)
+
 input1 = input('Do You Want To Do Again?')
 
-if input1 == 'yes':
-    print(mystr)
+print(spl2)
