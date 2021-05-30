@@ -55,7 +55,7 @@ while(True):
 
 
     else:
-        speak("Incorrect input provied. Please select options between 1 to 7 only.")
+        speak("Incorrect input provided. Please select options between 1 to 7 only.")
         print("incorrect input")
 
     myask2 = ""
