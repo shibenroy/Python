@@ -1,10 +1,5 @@
-import pyttsx3
+import time 
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-engine.setProperty('voices', voices[0].id)
-print(voices[2].id)
+localtime= time.asctime(time.localtime(time.time()))
 
-def speak(audio):
-    engine.say(audio)
-    engine.runAndWait()
+print('This is you time',localtime)
