@@ -1,5 +1,5 @@
-import time 
+import requests
 
-localtime= time.asctime(time.localtime(time.time()))
+x = requests.get('https://w3schools.com/python/demopage.htm')
 
-print('This is you time',localtime)
+print(x.text)

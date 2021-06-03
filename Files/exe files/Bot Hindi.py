@@ -28,8 +28,8 @@ def speak(audio):
 
 print("Jarvis speaking ....")    
 fline = "मैं जार्विस हूं और मैं शीबेन बीओटी हूं"
-Sline = "Today is", Printday(today)
-Tline = "We have multiple option for your selection. First Please input a Sentence to Continue."
+Sline = "आज गुरुवार है",
+Tline = "हमारे पास आपके चयन के लिए कई विकल्प हैं। पहले कृपया एक वाक्य जारी रखने के लिए इनपुट."
 
 speak(fline)
 speak(Sline)
@@ -57,15 +57,16 @@ while(True):
     print(' 4.LowerCase')
     print(' 5.UpperCase')
     print(' 6.Replace Space By *')
-    print(' 7. All Word Frist Letter Capital')
+    print(' 7.All Word Frist Letter Capital')
     print(' 8.Your Current time')
     print(' 9.View Your Sentence')  
     print(' 10.Print Today Date')
     print(' 11.Time')
     print(' 12.Year')
     print(' 13.DateTime')
+    print(' 14.Month')
     print()
-    speak("Please select your choice. You have 14 options.")
+    speak("कृपया अपनी पसंद का चयन करें। आपके पास 14 विकल्प हैं.")
 
     myask = input('Please Enter You Choice  :')
     spl = mystr.split()
@@ -106,23 +107,19 @@ while(True):
 
 
     else:
-        speak("Incorrect input provided. Please select options between 1 to 7 only.")
+        speak("गलत इनपुट प्रदान किया गया। कृपया केवल 1 से 7 के बीच विकल्पों का चयन करें.")
         print("incorrect input...")
 
     myask2 = ""
 
-    speak("To continue press c and to quit press q..")
+    speak("प्रेस सी जारी रखने के लिए और प्रेस क्यू छोड़ने के लिए..")
     print('To continue press c and to quit press q  :')
     
     while (myask2 != 'q' and myask2 !='c'):
         myask2 = input()
         if myask2 == 'q':
-            speak("Good Bye! Have a good day.")
+            speak("अलविदा! आपका दिन अच्छा हो.")
             exit()
         elif myask2 == 'c':
             continue
     # input("Press enter to close program")
-
-
-
-
