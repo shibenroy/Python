@@ -1,0 +1,39 @@
+<MyLayout>
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+       
+        Label:
+            id: click_label
+            text: " Rock  Paper Scissor Game ... From - Roy -"
+            font_size: 15
+            background_color: (150/255,150/255,150/255,1)
+            bold: True
+            outline_color: (0,0,1)
+            halign: "left"
+
+        Label:
+            id: click_label
+            text: "Select from below drop down ..."
+            font_size: 32
+
+
+        Label:
+            id: comp_label
+            text: " "
+            font_size: 32
+                
+        Label:
+            id: res_label
+            text: " "
+            font_size: 38
+            color: 'ff3333'
+
+        Spinner:
+            id: spinner_id
+            text: "Your Selection"
+            values: ["Rock", "Paper", "Scissor"]
+
+            on_text: root.spinner_clicked(spinner_id.text)
+            on_text: root.comp_result()
+            on_text: root.show_result(spinner_id.text, comp_label.text )
