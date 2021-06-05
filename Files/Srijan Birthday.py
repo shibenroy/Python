@@ -94,7 +94,12 @@ while (True):
         print('1. riddle')
         print('2. ridlle')
         rid  = input('Enter Your Riddle')
-        
+    if rid == '1':
+        print('Where to fish keep there money?') 
+        time.sleep(2.5)   
+        print('RiverBank')
+    elif rid == '2':
+        print("I Go throw Mountain, Hills and City but don't Move")    
     elif ask1 == '2':
         rockpaperscissor()
     elif ask1 == '4':
