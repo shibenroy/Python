@@ -4,7 +4,7 @@ import pyttsx3
 import speech_recognition as SR
 import random
 import time
-
+rid = ''
 # Audio
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -94,12 +94,15 @@ while (True):
         print('1. riddle')
         print('2. ridlle')
         rid  = input('Enter Your Riddle')
+    # RID    
     if rid == '1':
         print('Where to fish keep there money?') 
         time.sleep(2.5)   
         print('RiverBank')
     elif rid == '2':
-        print("I Go throw Mountain, Hills and City but don't Move")    
+        print("I Go throw Mountain, Hills and City but don't Move")
+        time.sleep(4)   
+        print('Road') 
     elif ask1 == '2':
         rockpaperscissor()
     elif ask1 == '4':
@@ -111,7 +114,8 @@ while (True):
         print('As we march forth in our own fun way.')
         print('Just hanging around and laughing a lot')
         print('It is truly amazing what we have got.')
-    elif ask1 == '4':
+    elif ask1 == '1':
+        speak('Your Name Meaning Is Creation!')
         print("Your Name Meaning Is 'Creation' ")
     print('To Countinue Type - C -  And to Quit Type - Q - .......................3')
     
