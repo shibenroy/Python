@@ -27,7 +27,7 @@ while (True):
     elif userinput == 'P' and comp_input == 'S':
         print('Computer Wins')
     elif userinput == 'P' and comp_input == 'P':
-        print('Draw!!') 
+        print('Draw!!')
     # Rock       
     elif userinput == 'R' and comp_input == 'P':
         print('Computer Win!!!')
