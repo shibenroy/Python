@@ -106,6 +106,15 @@ while (True):
     elif ask1 == '2':
         rockpaperscissor()
     elif ask1 == '4':
+        speak('Happy Birthday to my very best friend.')    
+        speak('Your special day has come by again.')
+        speak('We had so much fun last time around.')
+        time.sleep(1)
+        speak('Each year June 7th is a wonderful day')
+        speak('As we march forth in our own fun way.')
+        speak('Just hanging around and laughing a lot')
+        speak('It is truly amazing what we have got.')
+        #Print
         print('Happy Birthday to my very best friend.')    
         print('Your special day has come by again.')
         print('We had so much fun last time around.')
