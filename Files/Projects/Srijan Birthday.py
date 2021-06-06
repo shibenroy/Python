@@ -1,12 +1,25 @@
-print('Preparing System . . .')
+'''
+Created By: Shiben Roy
+Date: 6 June 2021
+
+Created for my Friend Srijan. For his Birthday
+
+'''
+
+
 import pyttsx3
 
 import speech_recognition as SR
 import random
 import time
-rid = ''
+
+rid = ""
+print("Process initiated ...")
+print()
+
 # Audio
-engine = pyttsx3.init('sapi5')
+# engine = pyttsx3.init('sapi5')
+engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 
@@ -63,13 +76,13 @@ def rockpaperscissor():
             countinue1 = input()
             countinue1 = countinue1.capitalize()
             if countinue1 == 'Q': 
-                print('To See More Other Qption Please Rerun The Program')
-                speak('To See More Other Qption Please Rerun The Program')
+                print('To See More options Please Rerun The Program')
+                speak('To See More options, Please Rerun The Program.')
                 exit()
             elif countinue1 == 'C':
                 continue
 
-# Starting
+# Starting the process .................................
 print('Speaking . . .')
 speak("Hi, I am Sheeben's Bot!")
 speak('Please, Enter your name')
@@ -80,8 +93,8 @@ if Name1 == 'Srijan':
     print()
     print('Welcome Srijan')
 else:
-    print('Incorrect Input')    
-    speak('Incorrect Input this is only make for srijan')
+    print('Incorrect Input this is only make for Srijan')    
+    speak('Incorrect Input, this is only make for srijan')
     exit()
 speak('Welcome Sreejon')
 time.sleep(0.5)
@@ -91,16 +104,17 @@ while (True):
     print()
     print('We Have Many Option For You')
     speak('We Have Many Option For You')
-    print(' 1.Do you know what is the meanig of your Name')
-    print(' 2.Play a game, Rock Paper Scissor ')
-    print(' 3.Funny Riddle')
-    print(' 4.Birthday Poem for you')
-    ask1 = input('Select Your Choice')
+    print(' 1. Do you know what is the meaning of your Name ?')
+    print(' 2. Play a game, Rock Paper Scissor *')
+    print(' 3. Funny Riddle *')
+    print(' 4. Birthday Poem for you *')
+    print()
+    ask1 = input('Input Your Choice (1 / 2 / 3 / 4) : ')
 
     if ask1 == '3':
         print('a. riddle')
         print('b. ridlle')
-        rid  = input('Enter Your Riddle')
+        rid  = input('Enter Your Riddle : ')
         rid = rid.capitalize()
     # RID    
         if rid == 'A':
@@ -109,20 +123,23 @@ while (True):
             time.sleep(2)   
             print("It's RiverBank")
             speak(" It's Riverbank" )
+
         elif rid == 'B':
             speak("I Go throw Mountain, Hills and City but don't Move")
             print("I Go throw Mountain, Hills and City but don't Move")
             time.sleep(2)   
             print("It's Road")
             speak("It's Road") 
+
     elif ask1 == '2':
         rockpaperscissor()
+
     elif ask1 == '4':
         print('Happy Birthday to my very best friend.')    
         print('Your special day has come by again.')
         print('We had so much fun last time around.')
         print('Each year June 7th is a wonderful day')
-        print('As we march forth in our own fun way.')
+        print('As we June Seventh in our own fun way.')
         print('Just hanging around and laughing a lot')
         print('It is truly amazing what we have got.')
         speak('Happy Birthday, to my very best friend.')    
@@ -130,11 +147,10 @@ while (True):
         speak('We had so much fun last time around.')
         time.sleep(1)
         speak('Each year June 7th is a wonderful day')
-        speak('As we march forth in our own fun way.')
+        speak('As we June Seventh in our own fun way.')
         speak('Just hanging around and laughing a lot')
         speak('It is truly amazing what we have got.')
-        
-        
+                
     elif ask1 == '1':
         speak('Did you know meaning of your name, Your Name Meaning Is Creation!')
         print("Did you know meaning of your name, Your Name Meaning Is Creation! ")
@@ -145,7 +161,7 @@ while (True):
         
         myask2 = input()
         if myask2 == 'q':
-            speak("Good Bye Sreejon!, Have a good day.")
+            speak("Good Bye Sreejon!, Enjoy your Birthday.")
             print('App ShutingDown!')
             speak('App ShuttingDown!')
             time.sleep(1)
