@@ -1,5 +1,14 @@
-import requests
+def factor(x):
+    y = int(x)
+    print('Factor of',y,'is' )
+    y = int(x)
+    for i in range(1, y + 1):
+        if y%i == 0 :
+            print(i)
 
-x = requests.get('https://w3schools.com/python/demopage.htm')
+factorNum = input('Pls input num')
 
-print(x.text)
+factor(factorNum)
+
+
+         
