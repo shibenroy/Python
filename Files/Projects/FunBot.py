@@ -1,0 +1,146 @@
+import pyttsx3
+import speech_recognition as SR
+import random
+import time
+from googlesearch import search
+import requests
+from bs4 import BeautifulSoup
+
+rid = ""
+print("Process initiated ...")
+print()
+
+# Audio
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
+
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
+
+def say(text):
+    print(text)
+    speak(text)
+
+# Function to get the meaning of a name from Google
+def get_name_meaning(name):
+    query = f"meaning of the name {name}"
+    url = None
+    for result in search(query, num_results=1):
+        url = result
+        break  # Only take the first result
+    
+    if not url:
+        return None
+
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    # Extract the meaning from the webpage (this part might need to be customized based on the actual page structure)
+    # This is a placeholder; you'll need to identify the right tag/class/id based on the actual search result page structure
+    meaning_div = soup.find('div', class_='BNeawe')
+    if meaning_div:
+        return meaning_div.text
+    return None
+
+# Rock Paper Scissor
+def rockpaperscissor():
+    while True:
+        continue1 = ''
+        say("Please enter [R]ock or [P]aper or [S]cissor")
+        userinput = input('User Input : ').capitalize()
+        mylist = ['R', 'P', 'S']
+
+        if userinput not in mylist:
+            say('Incorrect Input, Please enter [R]ock or [P]aper or [S]cissor...')
+        else:
+            comp_input = random.choice(mylist)
+            say(f"user input is {userinput} and Computer input is {comp_input}")
+
+            # Determine winner
+            if userinput == 'P' and comp_input == 'R' or \
+               userinput == 'R' and comp_input == 'S' or \
+               userinput == 'S' and comp_input == 'P':
+                say('User Win!!!')
+            elif userinput == comp_input:
+                say('Draw!!!')
+            else:
+                say('Computer Wins!!!')
+
+        say('To Continue Type - C - And to Quit Type - Q - ...')
+
+        while continue1 != 'Q' and continue1 != 'C':
+            continue1 = input().capitalize()
+            if continue1 == 'Q':
+                say('To See More options Please Rerun The Program')
+                exit()
+            elif continue1 == 'C':
+                break
+
+# Starting the process .................................
+say("Hi, I am Sheeben's Bot!")
+say('Please, Enter your name')
+
+Name1 = input('Name?: ')
+Name1 = Name1.capitalize()
+say('Welcome, ' + Name1)
+time.sleep(0.5)
+say('Happy birthday! Sreejon. Many many Happy returns of the day!')
+
+while True:
+    say('I can do many things')
+    say(' 1. Do you know what is the meaning of your Name ?')
+    say(' 2. Play a game, Rock Paper Scissor *')
+    say(' 3. Funny Riddle *')
+    say(' 4. Birthday Poem for you *')
+    ask1 = input('Input Your Choice (1 / 2 / 3 / 4) : ')
+
+    if ask1 == '3':
+        say('a. riddle')
+        say('b. riddle')
+        rid = input('Enter Your Riddle : ').capitalize()
+        if rid == 'A':
+            say('Where Do fish keep its money?')
+            time.sleep(2)
+            say("It's RiverBank")
+        elif rid == 'B':
+            say("I Go through Mountain, Hills and City but don't Move")
+            time.sleep(2)
+            say("It's Road")
+
+    elif ask1 == '2':
+        rockpaperscissor()
+
+    elif ask1 == '4':
+        poem = [
+            'Happy Birthday to my very best friend.',
+            'Your special day has come by again.',
+            'We had so much fun last time around.',
+            'Each year June 7th is a wonderful day',
+            'As we June Seventh in our own fun way.',
+            'Just hanging around and laughing a lot',
+            'It is truly amazing what we have got.'
+        ]
+        for line in poem:
+            say(line)
+            time.sleep(1)
+
+    elif ask1 == '1':
+        meaning = get_name_meaning(Name1)
+        if meaning:
+            say(f'The meaning of your name, {Name1}, is {meaning}')
+        else:
+            say('Sorry, I could not find the meaning of your name.')
+
+    say('To Continue Type - C - And to Quit Type - Q - ...')
+    
+    myask2 = ''
+    while myask2 != 'q' and myask2 != 'c':
+        myask2 = input().lower()
+        if myask2 == 'q':
+            say("Good Bye Sreejon!, Enjoy your Birthday.")
+            say('App ShuttingDown!')
+            time.sleep(1)
+            exit()
+        elif myask2 == 'c':
+            break

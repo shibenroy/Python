@@ -1,3 +1,5 @@
+# By Shiben :D
+#https://github.com/shibenroy/Python
 from tkinter import *
 
 ws = Tk()
