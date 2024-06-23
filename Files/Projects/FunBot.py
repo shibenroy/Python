@@ -9,6 +9,17 @@ from bs4 import BeautifulSoup
 print("Process initiated ...")
 print()
 
+
+# List of riddles
+riddles_with_answers = [
+    ("What has keys but can't open locks? A piano!", "A piano!"),
+    ("What can travel around the world while staying in a corner? A stamp!", "A stamp!"),
+    ("I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I? An echo!", "An echo!"),
+    ("What belongs to you but is used more by others? Your name!", "Your name!"),
+    ("The more you take, the more you leave behind. What am I? Footsteps!", "Footsteps!"),
+    
+]
+
 # Audio
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -93,17 +104,12 @@ while True:
     ask1 = input('Input Your Choice (1 / 2 / 3 / 4) : ')
 
     if ask1 == '3':
-        say('a. riddle')
-        say('b. riddle')
-        rid = input('Enter Your Riddle : ').capitalize()
-        if rid == 'A':
-            say('Where Do fish keep its money?')
-            time.sleep(2)
-            say("It's RiverBank")
-        elif rid == 'B':
-            say("I Go through Mountain, Hills and City but don't Move")
-            time.sleep(2)
-            say("It's Road")
+        say('Sure! Here is a random riddle for you:')
+        random_riddle, answer = random.choice(riddles_with_answers)
+        say(random_riddle)
+        say('...')
+        time.sleep(3)  # Wait for 3 seconds before revealing the answer
+        say(f"The answer is: {answer}")     
 
     elif ask1 == '2':
         rockpaperscissor()
