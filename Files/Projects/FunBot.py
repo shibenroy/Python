@@ -6,7 +6,6 @@ from googlesearch import search
 import requests
 from bs4 import BeautifulSoup
 
-rid = ""
 print("Process initiated ...")
 print()
 
@@ -27,7 +26,7 @@ def say(text):
 def get_name_meaning(name):
     query = f"meaning of the name {name}"
     url = None
-    for result in search(query, num_results=1):
+    for result in search(query, num=1):
         url = result
         break  # Only take the first result
     
@@ -37,11 +36,10 @@ def get_name_meaning(name):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     # Extract the meaning from the webpage (this part might need to be customized based on the actual page structure)
-    # This is a placeholder; you'll need to identify the right tag/class/id based on the actual search result page structure
     meaning_div = soup.find('div', class_='BNeawe')
     if meaning_div:
         return meaning_div.text
-    return None
+    return "Sorry, I could not find the meaning of your name."
 
 # Rock Paper Scissor
 def rockpaperscissor():
@@ -78,14 +76,13 @@ def rockpaperscissor():
                 break
 
 # Starting the process .................................
-say("Hi, I am Sheeben's Bot!")
+say("Hi, I am Fun Bot!")
 say('Please, Enter your name')
 
 Name1 = input('Name?: ')
 Name1 = Name1.capitalize()
 say('Welcome, ' + Name1)
 time.sleep(0.5)
-say('Happy birthday! Sreejon. Many many Happy returns of the day!')
 
 while True:
     say('I can do many things')
