@@ -108,7 +108,7 @@ while True:
         random_riddle, answer = random.choice(riddles_with_answers)
         say(random_riddle)
         say('...')
-        time.sleep(3)  # Wait for 3 seconds before revealing the answer
+        time.sleep(3)  
         say(f"The answer is: {answer}")     
 
     elif ask1 == '2':
